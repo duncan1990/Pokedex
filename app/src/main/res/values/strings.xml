@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="pokemons">Pokemons</string>
+    <string name="close_application">Close Application</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="give_me_overlay_permission">GIVE ME OVERLAY PERMISSION</string>
+</resources>
