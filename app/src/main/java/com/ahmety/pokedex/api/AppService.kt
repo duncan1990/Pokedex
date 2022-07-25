@@ -1,6 +1,6 @@
-package com.ahmety.myapplication.api
+package com.ahmety.pokedex.api
 
-import com.ahmety.myapplication.model.Result
+import com.ahmety.pokedex.model.Result
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

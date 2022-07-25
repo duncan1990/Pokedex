@@ -1,19 +1,13 @@
-package com.ahmety.myapplication.ui
+package com.ahmety.pokedex.ui
 
-import android.annotation.TargetApi
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
-import android.os.Build
-import android.provider.Settings
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ahmety.myapplication.model.Result
-import com.ahmety.myapplication.repository.HomeRepository
-import com.ahmety.myapplication.util.Resource
-import com.ahmety.myapplication.util.hasInternetConnection
+import com.ahmety.pokedex.model.Result
+import com.ahmety.pokedex.repository.HomeRepository
+import com.ahmety.pokedex.util.Resource
+import com.ahmety.pokedex.util.hasInternetConnection
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch

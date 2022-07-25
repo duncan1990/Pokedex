@@ -1,7 +1,7 @@
-package com.ahmety.myapplication.repository
+package com.ahmety.pokedex.repository
 
-import com.ahmety.myapplication.api.AppService
-import com.ahmety.myapplication.model.Result
+import com.ahmety.pokedex.api.AppService
+import com.ahmety.pokedex.model.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

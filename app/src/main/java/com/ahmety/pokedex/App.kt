@@ -1,4 +1,4 @@
-package com.ahmety.myapplication
+package com.ahmety.pokedex
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

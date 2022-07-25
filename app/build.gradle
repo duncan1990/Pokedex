@@ -12,7 +12,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.ahmety.myapplication"
+        applicationId "com.ahmety.pokedex"
         minSdk 24
         targetSdk 32
         versionCode 1

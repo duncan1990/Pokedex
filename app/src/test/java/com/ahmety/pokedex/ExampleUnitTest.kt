@@ -1,4 +1,4 @@
-package com.ahmety.myapplication
+package com.ahmety.pokedex
 
 import org.junit.Test
 

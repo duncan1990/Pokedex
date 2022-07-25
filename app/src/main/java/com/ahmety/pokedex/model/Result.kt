@@ -1,4 +1,4 @@
-package com.ahmety.myapplication.model
+package com.ahmety.pokedex.model
 
 data class Result(
     val count: Long,

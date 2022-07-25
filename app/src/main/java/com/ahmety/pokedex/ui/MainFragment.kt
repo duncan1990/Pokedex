@@ -1,4 +1,4 @@
-package com.ahmety.myapplication.ui
+package com.ahmety.pokedex.ui
 
 import android.annotation.TargetApi
 import android.content.Intent
@@ -14,8 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.ahmety.myapplication.databinding.FragmentMainBinding
-import com.ahmety.myapplication.util.Resource
+import com.ahmety.pokedex.databinding.FragmentMainBinding
+import com.ahmety.pokedex.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 

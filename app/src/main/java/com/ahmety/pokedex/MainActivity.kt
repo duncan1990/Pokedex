@@ -1,16 +1,10 @@
-package com.ahmety.myapplication
+package com.ahmety.pokedex
 
-import android.annotation.TargetApi
-import android.content.Intent
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import com.ahmety.myapplication.databinding.ActivityMainBinding
+import com.ahmety.pokedex.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

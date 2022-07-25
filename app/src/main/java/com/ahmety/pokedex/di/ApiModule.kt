@@ -1,7 +1,7 @@
-package com.ahmety.myapplication.di
+package com.ahmety.pokedex.di
 
-import com.ahmety.myapplication.api.AppService
-import com.ahmety.myapplication.api.AppService.Companion.ENDPOINT
+import com.ahmety.pokedex.api.AppService
+import com.ahmety.pokedex.api.AppService.Companion.ENDPOINT
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

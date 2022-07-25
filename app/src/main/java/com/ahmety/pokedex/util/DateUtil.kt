@@ -1,4 +1,4 @@
-package com.ahmety.myapplication.util
+package com.ahmety.pokedex.util
 
 import android.content.Context
 import android.net.ConnectivityManager

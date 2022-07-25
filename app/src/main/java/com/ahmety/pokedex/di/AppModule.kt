@@ -1,4 +1,4 @@
-package com.ahmety.myapplication.di
+package com.ahmety.pokedex.di
 
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package com.ahmety.myapplication.util
+package com.ahmety.pokedex.util
 
 sealed class Resource<T>(
     val data: T? = null,
