@@ -12,8 +12,8 @@ interface AppService {
     }
 
     @GET("pokemon")
-    suspend fun getPokemon(@Query("offset") offset: Int, @Query("limit") limit: Int): Response<Result>
+    suspend fun getPokemon(@Query("offset") offset: Int, @Query("limit") limit: Int = 20): Response<Result>
 
-    @GET("")
+    @GET(".")
     suspend fun getPokemonDetail(@Path("pokemonId") pokemonId: Int): Response<Result>
 }

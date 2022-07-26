@@ -4,6 +4,11 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
+import com.ahmety.pokedex.api.AppService
+import com.ahmety.pokedex.datasource.MainPagingDataSource
 import com.ahmety.pokedex.model.Result
 import com.ahmety.pokedex.repository.HomeRepository
 import com.ahmety.pokedex.util.Resource
@@ -16,17 +21,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-   private val homeRepository: HomeRepository,
-   @ApplicationContext private val context: Context
+   private val repository: HomeRepository,
+   //  @ApplicationContext private val context: Context
 ) : ViewModel() {
-    val pokemonList: MutableLiveData<Resource<Result?>> = MutableLiveData()
+  //  val pokemonList: MutableLiveData<Resource<Result?>> = MutableLiveData()
 
-   fun getPokemon(offset: Int, limit: Int){
+ /*  fun getPokemon(offset: Int){
         pokemonList.postValue(Resource.Loading())
         viewModelScope.launch {
             try {
             if (hasInternetConnection(context)) {
-                val response = homeRepository.getPokemon(offset,limit)
+                val response = homeRepository.getPokemon(offset)
                 pokemonList.postValue(Resource.Success(response.body()))
                  } else{
                     pokemonList.postValue(Resource.Error("No Internet Connection"))
@@ -38,6 +43,12 @@ class HomeViewModel @Inject constructor(
                 }
             }
         }
-    }
+    }*/
+
+    val listData = Pager(PagingConfig(pageSize = 20)) {
+        MainPagingDataSource(repository)
+
+    }.flow.cachedIn(viewModelScope)
+
 
 }

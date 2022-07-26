@@ -65,6 +65,9 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
+    // Android Jetpack Paging 3.0
+    implementation "androidx.paging:paging-runtime:3.0.0-alpha06"
+
     // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0"

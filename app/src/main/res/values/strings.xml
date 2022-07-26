@@ -5,4 +5,6 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="give_me_overlay_permission">GIVE ME OVERLAY PERMISSION</string>
+    <string name="pokemon_name">Pokemon Name</string>
+    <string name="try_again">TRY AGAIN</string>
 </resources>

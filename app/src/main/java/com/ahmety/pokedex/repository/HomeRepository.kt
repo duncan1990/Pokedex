@@ -12,11 +12,10 @@ import javax.inject.Singleton
 class HomeRepository @Inject constructor(
     private val appService: AppService
 ) {
-    suspend fun getPokemon(offset: Int, limit: Int): Response<Result> = withContext(
+    suspend fun getPokemon(offset: Int): Response<Result> = withContext(
         Dispatchers.IO
     ) {
-        val pokemon = appService.getPokemon(offset = offset, limit = limit)
+        val pokemon = appService.getPokemon(offset = offset)
         pokemon
-
     }
 }
