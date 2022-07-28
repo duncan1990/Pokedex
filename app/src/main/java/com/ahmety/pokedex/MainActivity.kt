@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             toggle.syncState()
 
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            supportActionBar?.title = getString(R.string.pokemons)
 
             navView.setNavigationItemSelectedListener {
                 when (it.itemId) {

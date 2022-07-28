@@ -15,6 +15,8 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.ahmety.pokedex.R
 import com.ahmety.pokedex.databinding.FragmentMainBinding
 import com.ahmety.pokedex.model.Pokemon
 import com.ahmety.pokedex.ui.adapter.MainAdapter
@@ -65,6 +67,7 @@ class MainFragment : Fragment() {
     }
 
     private fun setUI() {
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = getString(R.string.pokemons)
         binding.givePermissionBtn.isVisible = !checkDrawOverlayPermission()
         binding.recyclerViewMain.isVisible = checkDrawOverlayPermission()
         if (checkDrawOverlayPermission()) {
@@ -77,8 +80,8 @@ class MainFragment : Fragment() {
         binding.recyclerViewMain.isVisible = checkDrawOverlayPermission()
         mainAdapter = MainAdapter(::onClickPokemon)
         binding.recyclerViewMain.adapter = mainAdapter?.withLoadStateHeaderAndFooter(
-            header = MainLoadStateAdapter { mainAdapter?.retry() },
-            footer = MainLoadStateAdapter { mainAdapter?.retry() }
+            header = MainLoadStateAdapter { mainAdapter?.retry()},
+            footer = MainLoadStateAdapter { mainAdapter?.retry()}
         )
 
         binding.recyclerViewMain.apply {
@@ -94,41 +97,13 @@ class MainFragment : Fragment() {
         }
     }
 
-  /*  private fun observeUI() {
-        adapter = MainAdapter(::onClickPokemon)
-        binding.recyclerViewMain.adapter = adapter
-        homeViewModel.pokemonList.observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Success -> {
-                    binding.txtError.isVisible = false
-                    //binding.animationViewLoading.isVisible = false
-                    val data = it.data
-                  //  binding.textView.text = "success"
-                    adapter?.submitList(data?.results)
-                }
-                is Resource.Error -> {
-                    binding.txtError.isVisible = true
-                    //binding.animationViewLoading.isVisible = false
-                    it.message?.let { message ->
-                         binding.txtError.text = message
-                        //Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
-                    }
-                }
-                is Resource.Loading -> {
-                    //binding.animationViewLoading.isVisible = true
-                }
+    private fun onClickPokemon(item: Pokemon) {
+        val action = MainFragmentDirections.actionMainFragmentToDetailFragment(item.name)
+        findNavController().apply {
+            currentDestination?.getAction(action.actionId)?.run {
+                navigate(action)
             }
         }
-    } */
-
-    private fun onClickPokemon(pokemon: Pokemon) {
-        /*
-                findNavController().apply {
-                currentDestination?.getAction(R.id.action_mainFragment_to_customerFragment)?.run {
-                    navigate(R.id.action_mainFragment_to_customerFragment)
-                }
-            }
-         */
     }
 
     private fun setupClickListener() {

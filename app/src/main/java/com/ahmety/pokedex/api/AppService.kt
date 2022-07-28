@@ -1,5 +1,6 @@
 package com.ahmety.pokedex.api
 
+import com.ahmety.pokedex.model.PokemonDetail
 import com.ahmety.pokedex.model.Result
 import retrofit2.Response
 import retrofit2.http.GET
@@ -14,6 +15,6 @@ interface AppService {
     @GET("pokemon")
     suspend fun getPokemon(@Query("offset") offset: Int, @Query("limit") limit: Int = 20): Response<Result>
 
-    @GET(".")
-    suspend fun getPokemonDetail(@Path("pokemonId") pokemonId: Int): Response<Result>
+    @GET("pokemon/{name}")
+    suspend fun getPokemonDetail(@Path("name") name: String): Response<PokemonDetail>
 }

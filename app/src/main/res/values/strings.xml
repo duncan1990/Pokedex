@@ -7,4 +7,10 @@
     <string name="give_me_overlay_permission">GIVE ME OVERLAY PERMISSION</string>
     <string name="pokemon_name">Pokemon Name</string>
     <string name="try_again">TRY AGAIN</string>
+    <string name="no_connection">No Internet Connection</string>
+    <string name="pokemon_details">Pokemon Details</string>
+    <string name="pokemon_title">Pokemon Name: %1s</string>
+    <string name="pokemon_height">Pokemon Height: %1d</string>
+    <string name="pokemon_weight">Pokemon Weight: %1d</string>
+    <string name="text_btn_show_overlay">SHOW %1s IN OVERLAY</string>
 </resources>
