@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // method to disable navigation drawer
+    fun enableDisableDrawer(mode: Int) {
+        binding.drawerLayout.setDrawerLockMode(mode)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)){
            return true

@@ -13,4 +13,7 @@
     <string name="pokemon_height">Pokemon Height: %1d</string>
     <string name="pokemon_weight">Pokemon Weight: %1d</string>
     <string name="text_btn_show_overlay">SHOW %1s IN OVERLAY</string>
+    <string name="close_window">CLOSE WINDOW</string>
+    <string name="network_failure">Network Failure </string>
+    <string name="conversion_failure">Conversion Error</string>
 </resources>

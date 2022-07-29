@@ -1,16 +1,20 @@
 package com.ahmety.pokedex.ui.detail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.ahmety.pokedex.R
 import com.ahmety.pokedex.databinding.FragmentDetailBinding
+import com.ahmety.pokedex.service.OverlayControlService
+import com.ahmety.pokedex.ui.detail.DetailViewModel.Companion.ACTION_STOP_FOREGROUND
 import com.ahmety.pokedex.util.Resource
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,6 +41,7 @@ class DetailFragment : Fragment() {
         detailViewModel.getPokemonDetail(args.pokemonName) // call request from view model
         setUI()
         observeUI()
+        setOnClickListener()
     }
 
     private fun setUI() {
@@ -85,6 +90,24 @@ class DetailFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun setOnClickListener() {
+        binding.apply {
+            btnShowOverlay.setOnClickListener {
+                val intent = Intent(requireContext(), OverlayControlService::class.java)
+                intent.putExtra("pokemonName",detailViewModel.pokemonList.value?.data?.name)
+                intent.putExtra("frontPhoto", detailViewModel.pokemonList.value?.data?.sprites?.front_default)
+                intent.putExtra("behindPhoto", detailViewModel.pokemonList.value?.data?.sprites?.back_default)
+                activity?.startService(intent)
+                activity?.finish()
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

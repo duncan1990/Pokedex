@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/givePermissionBtn"
+        android:id="@+id/btnGivePermission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/gray"
@@ -24,19 +24,53 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgError"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_baseline_error_outline_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewMain"
+        app:layout_constraintVertical_bias="0.39"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/txtError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/no_connection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="TextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/imgError"
+        tools:text="TextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/gray"
+        android:text="@string/try_again"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtError" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btnTryAgain,txtError,imgError"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

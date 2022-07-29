@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ahmety.pokedex.BuildConfig
+import com.ahmety.pokedex.R
 import com.ahmety.pokedex.model.PokemonDetail
 import com.ahmety.pokedex.repository.DetailRepository
 import com.ahmety.pokedex.util.Resource
@@ -32,14 +34,19 @@ class DetailViewModel @Inject constructor(
                     val response = repository.getPokemonDetail(pokemonName)
                     pokemonList.postValue(Resource.Success(response.body()))
                 } else {
-                    pokemonList.postValue(Resource.Error("No Internet Connection"))
+                    pokemonList.postValue(Resource.Error(application.applicationContext.getString(R.string.no_connection)))
                 }
             } catch (ex: Exception) {
                 when (ex) {
-                    is IOException -> pokemonList.postValue(Resource.Error("Network Failure " + ex.localizedMessage))
-                    else -> pokemonList.postValue(Resource.Error("Conversion Error"))
+                    is IOException -> pokemonList.postValue(Resource.Error(application.applicationContext.getString(R.string.network_failure) + ex.localizedMessage))
+                    else -> pokemonList.postValue(Resource.Error(application.applicationContext.getString(R.string.conversion_failure)))
                 }
             }
         }
     }
+
+    companion object{
+        const val  ACTION_STOP_FOREGROUND = "${BuildConfig.APPLICATION_ID}.stopoverlay.service"
+    }
+
 }
