@@ -47,7 +47,6 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initActionBarVisibility()
-       // setUI()
         setupAdapter()
         setupClickListener()
 
@@ -140,21 +139,6 @@ class MainFragment : Fragment() {
         }
         return Settings.canDrawOverlays(requireContext())
     }
-
-/*    @Deprecated("Deprecated in Java")
-    @TargetApi(Build.VERSION_CODES.M)
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_CODE) {
-            if (Settings.canDrawOverlays(requireContext())) {
-                Toast.makeText(requireContext(), "Permission granted", Toast.LENGTH_SHORT).show()
-            }
-        }
-*//*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
-            (AppOpsManager.OPSTR_SYSTEM_ALERT_WINDOW == op &&
-                    requireActivity().packageName.equals(requireContext().packageName))) {
-            // proceed to back to your app
-        }*//*
-    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()

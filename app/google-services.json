@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "605236496590",
+    "project_id": "pokedexapp-14b2d",
+    "storage_bucket": "pokedexapp-14b2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605236496590:android:12a2c8952634509962a89f",
+        "android_client_info": {
+          "package_name": "com.ahmety.pokedex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605236496590-npt7247pg8gc6i1cs2bj1c9lgn7j7363.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg95vqgp335mrXQ-Q87f_HschGNGuti30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605236496590-npt7247pg8gc6i1cs2bj1c9lgn7j7363.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
