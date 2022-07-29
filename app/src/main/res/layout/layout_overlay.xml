@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/imgFront"
+        android:id="@+id/imgBehind"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,14 +19,14 @@
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/imgBehind"
+        android:id="@+id/imgFront"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@id/imgFront"
+        app:layout_constraintBottom_toBottomOf="@id/imgBehind"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.23"
-        app:layout_constraintStart_toEndOf="@id/imgFront"
-        app:layout_constraintTop_toTopOf="@id/imgFront"
+        app:layout_constraintStart_toEndOf="@id/imgBehind"
+        app:layout_constraintTop_toTopOf="@id/imgBehind"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -34,9 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgBehind"
-        app:layout_constraintStart_toStartOf="@+id/imgFront"
-        app:layout_constraintTop_toBottomOf="@+id/imgFront"
+        app:layout_constraintEnd_toEndOf="@+id/imgFront"
+        app:layout_constraintStart_toStartOf="@+id/imgBehind"
+        app:layout_constraintTop_toBottomOf="@+id/imgBehind"
         tools:text="Pokemon Name" />
 
     <Button
@@ -47,8 +47,8 @@
         android:backgroundTint="@color/gray"
         android:text="@string/close_window"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/imgBehind"
-        app:layout_constraintStart_toStartOf="@+id/imgFront"
+        app:layout_constraintEnd_toEndOf="@+id/imgFront"
+        app:layout_constraintStart_toStartOf="@+id/imgBehind"
         app:layout_constraintTop_toBottomOf="@+id/txtPokemonName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
